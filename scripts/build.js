@@ -1,6 +1,7 @@
-import { mkdirSync, copyFileSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdirSync, copyFileSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-const url=process.env.SUPABASE_URL || '',key=process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const defaults=JSON.parse(readFileSync('public/config.json','utf8'));
+const url=process.env.SUPABASE_URL || defaults.url,key=process.env.SUPABASE_PUBLISHABLE_KEY || defaults.key;
 if(url && (!/^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(url)))throw Error('SUPABASE_URL inválida: use https://<projeto>.supabase.co sem barra final');
 if(key.startsWith('sb_secret_'))throw Error('Nunca publique uma chave secreta.');
 if(key.startsWith('eyJ')){const payload=JSON.parse(Buffer.from(key.split('.')[1],'base64url').toString());if(payload.role!=='anon')throw Error('Apenas a chave anon/publishable pode ser pública.');}

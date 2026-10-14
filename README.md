@@ -49,7 +49,7 @@ Execute a partir da raiz do projeto. `SEU_PROJECT_REF` é o identificador do end
 
 ### 5. Publicar no GitHub Pages
 
-1. Em **GitHub → cncs → Settings → Secrets and variables → Actions → Variables**, crie duas **Repository variables**:
+1. O projeto já inclui o endereço Supabase e a chave pública em `public/config.json`; não precisa de criar variáveis. Para mudar de projeto, edite esse ficheiro ou substitua os valores com estas **Repository variables** em **GitHub → cncs → Settings → Secrets and variables → Actions → Variables**:
    - `SUPABASE_URL`: `https://<projeto>.supabase.co`, sem barra final.
    - `SUPABASE_PUBLISHABLE_KEY`: chave publishable ou anon do passo 2.
 2. Em **Settings → Pages → Build and deployment → Source**, escolha **GitHub Actions**. No plano gratuito, use um repositório público.
