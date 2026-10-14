@@ -1,0 +1,2 @@
+[functions.blacklist]
+verify_jwt = false

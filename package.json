@@ -1,0 +1,20 @@
+{
+  "name": "cncs-blacklists",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node scripts/serve.js",
+    "test": "node --test test/*.test.js",
+    "test:db": "node scripts/test-db.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
